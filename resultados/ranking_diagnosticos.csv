@@ -1,0 +1,22 @@
+categoria,diagnostico,rank_qtd,rank_custo,internacoes,valor_total_bi,valor_medio,media_dias,pct_obito
+O80,Parto normal,1,2,9095123,5.215,573,2.2,0.02
+J18,Pneumonia,2,6,3417035,3.941,1153,6.4,10.33
+O82,Cesárea,3,13,2797380,2.083,745,2.5,0.03
+B34,Doenças por vírus (inclui COVID),4,1,1962235,10.675,5440,8.0,20.24
+I50,Insuficiência cardíaca,5,7,1784562,3.272,1833,7.7,11.54
+K80,Pedra na vesícula,6,18,1733642,1.599,923,3.1,0.6
+N39,Infecção urinária e outros,7,32,1694697,0.745,440,5.0,3.69
+I64,AVC,8,12,1465883,2.182,1488,7.4,15.33
+S82,Fratura da perna,9,16,1404867,1.727,1229,5.1,0.25
+J15,Pneumonia bacteriana,10,19,1298628,1.582,1218,6.7,9.92
+S52,Fratura do antebraço,11,36,1252149,0.702,561,3.0,0.06
+K40,Hérnia inguinal,12,30,1241273,0.812,654,1.6,0.19
+I21,Infarto,13,3,1154628,4.725,4093,7.2,9.86
+A49,Infecção bacteriana,14,14,1143191,2.051,1794,8.2,9.98
+A41,Sepse,15,4,1116000,4.585,4108,11.9,46.57
+I20,Angina,16,5,1007465,4.41,4377,5.2,2.23
+S72,Fratura do fêmur,17,11,985732,2.418,2453,7.7,3.22
+S06,Traumatismo craniano,21,15,943264,1.797,1905,6.3,9.53
+N18,Doença renal crônica,23,8,782791,3.267,4174,9.4,10.34
+P22,Desconforto respiratório do recém-nascido,45,10,490465,2.432,4959,12.6,7.64
+P07,Prematuridade e baixo peso ao nascer,48,9,467902,2.613,5585,15.9,6.38

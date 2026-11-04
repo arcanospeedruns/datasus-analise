@@ -1,0 +1,105 @@
+// =====================================================================
+// Medidas DAX. Crie uma tabela vazia só para guardar as medidas:
+// Página Inicial > Inserir dados > nome "Medidas" > Carregar.
+// Depois, com a tabela Medidas selecionada: Ferramentas de tabela > Nova medida,
+// e cole uma medida por vez.
+// =====================================================================
+
+// ---------- Visão geral (tabela visao_anual) ----------
+
+Internações =
+SUM ( visao_anual[internacoes] )
+
+Gasto (R$ bi) =
+SUM ( visao_anual[valor_total_bi] )
+
+Valor médio por internação =
+DIVIDE ( [Gasto (R$ bi)] * 1e9, [Internações] )
+
+// média ponderada pelo número de internações de cada ano
+% Óbito =
+DIVIDE (
+    SUMX ( visao_anual, visao_anual[internacoes] * visao_anual[pct_obito] ),
+    [Internações]
+) / 100
+
+// usa a coluna exata do ano (o gasto em bi vem arredondado em 2 casas)
+Valor médio 2015 =
+CALCULATE ( SUM ( visao_anual[valor_medio] ), visao_anual[ano] = 2015 )
+
+Valor médio 2023 =
+CALCULATE ( SUM ( visao_anual[valor_medio] ), visao_anual[ano] = 2023 )
+
+Variação do valor médio 2015-2023 =
+DIVIDE ( [Valor médio 2023], [Valor médio 2015] ) - 1
+
+% Óbito 2021 =
+CALCULATE ( [% Óbito], visao_anual[ano] = 2021 )
+
+% Óbito 2019 =
+CALCULATE ( [% Óbito], visao_anual[ano] = 2019 )
+
+
+// ---------- Diagnósticos (tabela ranking_diagnosticos) ----------
+
+Internações por diagnóstico =
+SUM ( ranking_diagnosticos[internacoes] )
+
+Gasto por diagnóstico (R$ bi) =
+SUM ( ranking_diagnosticos[valor_total_bi] )
+
+Valor médio por diagnóstico =
+DIVIDE ( [Gasto por diagnóstico (R$ bi)] * 1e9, [Internações por diagnóstico] )
+
+% Óbito por diagnóstico =
+DIVIDE (
+    SUMX ( ranking_diagnosticos, ranking_diagnosticos[internacoes] * ranking_diagnosticos[pct_obito] ),
+    [Internações por diagnóstico]
+) / 100
+
+
+// ---------- Evolução (tabela evolucao_diagnosticos) ----------
+
+Internações (evolução) =
+SUM ( evolucao_diagnosticos[internacoes] )
+
+Gasto (evolução, R$ mi) =
+SUM ( evolucao_diagnosticos[valor_total_mi] )
+
+% Óbito (evolução) =
+DIVIDE (
+    SUMX ( evolucao_diagnosticos, evolucao_diagnosticos[internacoes] * evolucao_diagnosticos[pct_obito] ),
+    [Internações (evolução)]
+) / 100
+
+
+// ---------- Estados (tabela estados) ----------
+
+Internações por estado =
+SUM ( estados[internacoes] )
+
+Internações por mil hab. por ano =
+AVERAGE ( estados[intern_por_mil_hab] )
+
+Valor médio por estado =
+AVERAGE ( estados[valor_medio] )
+
+% Óbito por estado =
+DIVIDE (
+    SUMX ( estados, estados[internacoes] * estados[pct_obito] ),
+    [Internações por estado]
+) / 100
+
+
+// ---------- Textos dos cartões (Visão geral) ----------
+// O cartão novo do Power BI abrevia números sozinho ("107 Mi", "2 Mil").
+// Para controlar o formato, os cartões usam estas medidas de texto.
+
+Internações 2015–2023 =
+FORMAT ( [Internações] / 1e6, "0.0" ) & " mi"
+
+Gasto 2015–2023 =
+"R$ " & FORMAT ( [Gasto (R$ bi)], "0.00" ) & " bi"
+
+Valor médio por internação 2023 =
+"R$ " & FORMAT ( [Valor médio 2023], "#,0" )

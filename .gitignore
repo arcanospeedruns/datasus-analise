@@ -1,0 +1,7 @@
+.env
+.venv/
+__pycache__/
+data/
+*.parquet
+.ipynb_checkpoints/
+credentials*.json
