@@ -1,6 +1,6 @@
 # Internações no SUS, 2015–2023
 
-Análise de **107 milhões de internações** pagas pelo SUS entre 2015 e 2023, a partir dos microdados do SIH/SUS (Sistema de Informações Hospitalares) disponibilizados pela Base dos Dados no Google BigQuery.
+Análise de **107 milhões de internações** financiadas pelo SUS entre 2015 e 2023, a partir dos microdados do SIH/SUS (Sistema de Informações Hospitalares) disponibilizados pela Base dos Dados no Google BigQuery.
 
 Perguntas que o projeto responde:
 
@@ -107,7 +107,9 @@ A pasta `powerbi/` tem o dashboard em quatro páginas (visão geral, diagnóstic
 <summary>Outras páginas</summary>
 
 ![Diagnósticos](powerbi/img/2-diagnosticos.png)
-![Evolução](powerbi/img/3-evolucao.png)
+![Evolução: internações](powerbi/img/3-evolucao.png)
+![Evolução: gasto](powerbi/img/3-evolucao-gasto.png)
+![Evolução: óbito](powerbi/img/3-evolucao-obito.png)
 ![Estados](powerbi/img/4-estados.png)
 
 </details>
