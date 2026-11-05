@@ -99,7 +99,7 @@ O `src/bq.py` faz um *dry run* antes de cada consulta e cancela se ela for ler m
 
 ## Dashboard em Power BI
 
-A pasta `powerbi/` tem o dashboard em quatro páginas (visão geral, diagnósticos, evolução e estados). As consultas do Power Query leem os CSVs de `resultados/` direto do GitHub, então o relatório abre e atualiza sem baixar nada. O passo a passo para montar do zero está em [`powerbi/GUIA.md`](powerbi/GUIA.md) e o relatório completo em [PDF](powerbi/internacoes-sus.pdf). Para abrir no Power BI Desktop, baixe o [`internacoes-sus.pbix`](powerbi/internacoes-sus.pbix).
+A pasta `powerbi/` tem o dashboard em quatro páginas (visão geral, diagnósticos, evolução e estados). As consultas do Power Query leem os CSVs de `resultados/` direto do GitHub, então o relatório abre e atualiza sem baixar nada. O passo a passo para montar do zero está em [`powerbi/GUIA.md`](powerbi/GUIA.md) e o relatório completo em [PDF](powerbi/internacoes-sus.pdf) (com a evolução em internações, gasto e óbitos). Para abrir no Power BI Desktop, baixe o [`internacoes-sus.pbix`](powerbi/internacoes-sus.pbix).
 
 ![Visão geral](powerbi/img/1-visao-geral.png)
 
